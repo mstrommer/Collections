@@ -34,19 +34,22 @@ public class Main {
         db.put(1, new Person(1, "Max","Mustermann"));
         db.put(2, new Person(2, "Maria","Musterfrau"));
         db.put(3, new Person(3, "Mai","Musterperson"));
-        //System.out.println(db.get(2));
+        // Only Values
         for (Person p : db.values()) {
             System.out.println(p);
         }
+        // Keys and Values (Lambdas 2. Semester!)
+        db.forEach((k, v) -> System.out.println(k + " " + v.toString()));
 
         // Sortieren
         List<Person> persons = new ArrayList<>();
         persons.add(new Person(1, "Max","Mustermann"));
         persons.add(new Person(2, "Bernard","Mustermann"));
         persons.add(new Person(3, "Andrea","Musterfrau"));
+
+        Collections.sort(persons);
         for (Person p : persons) {
             System.out.println(p);
         }
-        //Collections.sort(persons);
     }
 }
